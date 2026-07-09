@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   react-app:
-    image: react-app:v1
+    image: ${IMAGE_NAME}
     container_name: react-app-container
     ports:
       - "80:80"
