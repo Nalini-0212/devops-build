@@ -1,0 +1,22 @@
+global:
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'nalini.s.nhce@gmail.com'
+  smtp_auth_username: 'nalini.s.nhce@gmail.com'
+  smtp_auth_password: 'app-password'
+
+route:
+  group_by:
+    - alertname
+
+  group_wait: 10s
+  group_interval: 30s
+  repeat_interval: 1h
+
+  receiver: email-alerts
+
+receivers:
+  - name: email-alerts
+
+    email_configs:
+      - to: 'nalini.s.nhce@gmail.com'
+        send_resolved: true
